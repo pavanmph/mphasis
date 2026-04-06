@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+ <html xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:th="https://www.thymeleaf.org" 
+   xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"> 
+   <head> 
+      <title>
+         Spring Security
+      </title> 
+   </head>
+   <body> 
+      <h1 th:inline="text">Hello <span sec:authentication="name"></span>!</h1>
+     ADMIN <a href="/update" alt="update details">Update Details</a> &nbsp;&nbsp;
+      ONlY USER | ADMIN<a href="/user/read" alt="read details">Read Details</a> &nbsp;&nbsp;
+     ADMIN <a href="/delete" alt="delete data">delete Details</a> &nbsp;&nbsp;
+     HR | EMPLOYEE | ADMIN  <a href="/user/hr/onboard" alt="delete data">HR Details</a> 	  
+      <form th:action="@{/logout}" method="post"> 
+         <input type="submit" value="Sign Out"/> 
+      </form>
+   </body>
+   </html>
